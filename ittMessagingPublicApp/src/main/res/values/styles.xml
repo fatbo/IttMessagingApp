@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- <style name="fullpagedialog" parent="@android:style/Theme.Black.NoTitleBar.Fullscreen"> -->
+    <style name="fullpagedialog" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    
+    <style name="dialogWithStatusBar" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+</resources>

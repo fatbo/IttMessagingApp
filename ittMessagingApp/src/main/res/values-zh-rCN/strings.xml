@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ITT</string>
+    <!--<string name="version">1.3</string>-->
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">设定</string>
+    <string name="itt_messaging">ITT Messaging</string>
+    <string name="activiate">启动</string>
+    <string name="truck_id">车牌:</string>
+    <string name="device_id">用户号码:</string>
+    <string name="msg_datetime">日期:</string>
+    <string name="update">更新</string>
+    <string name="back">返回</string>
+    <string name="close">关闭</string>
+    <string name="back_to_list">讯息记录</string>
+    <string name="setting">设定</string>
+    <string name="language">语言</string>
+    <string name="zhtc">繁體中文</string>
+    <string name="zhsc">简体中文</string>
+    <string name="en">English</string>
+    <string name="contact_us">联络我们</string>
+    <string name="no_msg">未收到新讯息</string>
+    <string name="hotline">热线: 3669 1409</string>
+    <string name="setting_underline"><u>设定</u></string>
+    <string name="contactus_underline"><u>联络我们</u></string>
+    <string name="contactus_tech">技术支援</string>
+    <string name="no_connection">没有网络</string>
+    <string name="update_tv">新版本更新</string>
+    <string name="version_tv">版本:</string>
+    <string name="act_contact">2991 8049</string>
+    <string name="cosco_contact">2991 8049</string>
+    <string name="hit_contact">2619 7957</string>
+    <string name="mod_contact">2115 2609</string>
+    <string name="dpw_contact">2489 4744</string>
+    <string name="not_support">装置不相容</string>
+
+    <string-array name="language_arr">
+        <item>繁體中文</item>
+        <item>简体中文</item>
+        <item>English</item>
+    </string-array>
+    <string name="reconnected">重新连接到网络</string>
+    <string name="server_connection_failed">未能连接到伺服器</string>
+    
+    <!-- new format for isntruction messages  -->
+    <string name="fg_r01b_content">前往[%1$s]拍卡取柜</string>
+    
+    <string name="fg_r003_content_pt">到[%1$s]取柜</string>
+    <string name="fg_r003_content_ctnr_f">前: %1$s[%2$s]</string>
+    <string name="fg_r003_content_ctnr_a">后: %1$s[%2$s]</string>
+    <string name="fg_r003_content_gt">往[%1$s]交柜</string>
+
+    <string name="fg_r007_txt_content_gt">先到[%1$s]交柜</string>
+    <string name="fg_r007_txt_ctnr_f">前: %1$s[%2$s]</string>
+    <string name="fg_r007_txt_ctnr_a">后: %1$s[%2$s]</string>
+    <string name="fg_r007_txt_next_pt">后往[%1$s]取柜</string>
+    <string name="fg_r007_txt_ctnr_f2">前: %1$s[%2$s]</string>
+    <string name="fg_r007_txt_ctnr_a2">后: %1$s[%2$s]</string>
+    <string name="fg_r007_txt_next_gt">再到[%1$s]交柜</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/IttMessagingApp.iml" filepath="$PROJECT_DIR$/IttMessagingApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ittMessagingApp/ittMessagingApp.iml" filepath="$PROJECT_DIR$/ittMessagingApp/ittMessagingApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ittMessagingPublicApp/ittMessagingPublicApp.iml" filepath="$PROJECT_DIR$/ittMessagingPublicApp/ittMessagingPublicApp.iml" />
+    </modules>
+  </component>
+</project>

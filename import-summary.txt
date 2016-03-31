@@ -1,0 +1,123 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .DS_Store
+* Android Keystore\
+* Android Keystore\CVS\
+* Android Keystore\CVS\Entries
+* Android Keystore\CVS\Repository
+* Android Keystore\CVS\Root
+* Android Keystore\hkiport
+* CVS\
+* CVS\Entries
+* CVS\Repository
+* CVS\Root
+* fabric.properties
+* ic_launcher-web.png
+* kits.properties
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:19.1.0
+android-support-v7-appcompat.jar => com.android.support:appcompat-v7:19.1.0
+
+Replaced Libraries with Dependencies:
+-------------------------------------
+The importer recognized the following library projects as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the source files in your project were of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the library replacement in the import wizard and try
+again:
+
+android-support-v7-appcompat => [com.android.support:appcompat-v7:19.1.0]
+google-play-services_lib => [com.google.android.gms:play-services:+]
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => ittMessagingPublicApp\src\main\AndroidManifest.xml
+* assets\ => ittMessagingPublicApp\src\main\assets\
+* libs\arm64-v8a\libjpush174.so => ittMessagingPublicApp\src\main\jniLibs\arm64-v8a\libjpush174.so
+* libs\armeabi-v7a\libjpush174.so => ittMessagingPublicApp\src\main\jniLibs\armeabi-v7a\libjpush174.so
+* libs\armeabi\libjpush174.so => ittMessagingPublicApp\src\main\jniLibs\armeabi\libjpush174.so
+* libs\jpush-sdk-release1.7.4.jar => ittMessagingPublicApp\libs\jpush-sdk-release1.7.4.jar
+* libs\org.eclipse.paho.android.service-1.0.2.jar => ittMessagingPublicApp\libs\org.eclipse.paho.android.service-1.0.2.jar
+* libs\org.eclipse.paho.client.mqttv3-1.0.2.jar => ittMessagingPublicApp\libs\org.eclipse.paho.client.mqttv3-1.0.2.jar
+* libs\volley.jar => ittMessagingPublicApp\libs\volley.jar
+* lint.xml => ittMessagingPublicApp\lint.xml
+* res\ => ittMessagingPublicApp\src\main\res\
+* src\ => ittMessagingPublicApp\src\main\java\
+* src\.DS_Store => ittMessagingPublicApp\src\main\resources\.DS_Store
+* src\com\.DS_Store => ittMessagingPublicApp\src\main\resources\com\.DS_Store
+* src\com\CVS\Entries => ittMessagingPublicApp\src\main\resources\com\CVS\Entries
+* src\com\CVS\Repository => ittMessagingPublicApp\src\main\resources\com\CVS\Repository
+* src\com\CVS\Root => ittMessagingPublicApp\src\main\resources\com\CVS\Root
+* src\com\oneport\.DS_Store => ittMessagingPublicApp\src\main\resources\com\oneport\.DS_Store
+* src\com\oneport\adapter\.DS_Store => ittMessagingPublicApp\src\main\resources\com\oneport\adapter\.DS_Store
+* src\com\oneport\adapter\CVS\Entries => ittMessagingPublicApp\src\main\resources\com\oneport\adapter\CVS\Entries
+* src\com\oneport\adapter\CVS\Repository => ittMessagingPublicApp\src\main\resources\com\oneport\adapter\CVS\Repository
+* src\com\oneport\adapter\CVS\Root => ittMessagingPublicApp\src\main\resources\com\oneport\adapter\CVS\Root
+* src\com\oneport\CVS\Entries => ittMessagingPublicApp\src\main\resources\com\oneport\CVS\Entries
+* src\com\oneport\CVS\Repository => ittMessagingPublicApp\src\main\resources\com\oneport\CVS\Repository
+* src\com\oneport\CVS\Root => ittMessagingPublicApp\src\main\resources\com\oneport\CVS\Root
+* src\com\oneport\fragment\CVS\Entries => ittMessagingPublicApp\src\main\resources\com\oneport\fragment\CVS\Entries
+* src\com\oneport\fragment\CVS\Repository => ittMessagingPublicApp\src\main\resources\com\oneport\fragment\CVS\Repository
+* src\com\oneport\fragment\CVS\Root => ittMessagingPublicApp\src\main\resources\com\oneport\fragment\CVS\Root
+* src\com\oneport\itt\.DS_Store => ittMessagingPublicApp\src\main\resources\com\oneport\itt\.DS_Store
+* src\com\oneport\itt\CVS\Entries => ittMessagingPublicApp\src\main\resources\com\oneport\itt\CVS\Entries
+* src\com\oneport\itt\CVS\Repository => ittMessagingPublicApp\src\main\resources\com\oneport\itt\CVS\Repository
+* src\com\oneport\itt\CVS\Root => ittMessagingPublicApp\src\main\resources\com\oneport\itt\CVS\Root
+* src\com\oneport\itt\utils\CVS\Entries => ittMessagingPublicApp\src\main\resources\com\oneport\itt\utils\CVS\Entries
+* src\com\oneport\itt\utils\CVS\Repository => ittMessagingPublicApp\src\main\resources\com\oneport\itt\utils\CVS\Repository
+* src\com\oneport\itt\utils\CVS\Root => ittMessagingPublicApp\src\main\resources\com\oneport\itt\utils\CVS\Root
+* src\com\oneport\manager\CVS\Entries => ittMessagingPublicApp\src\main\resources\com\oneport\manager\CVS\Entries
+* src\com\oneport\manager\CVS\Repository => ittMessagingPublicApp\src\main\resources\com\oneport\manager\CVS\Repository
+* src\com\oneport\manager\CVS\Root => ittMessagingPublicApp\src\main\resources\com\oneport\manager\CVS\Root
+* src\com\oneport\model\CVS\Entries => ittMessagingPublicApp\src\main\resources\com\oneport\model\CVS\Entries
+* src\com\oneport\model\CVS\Repository => ittMessagingPublicApp\src\main\resources\com\oneport\model\CVS\Repository
+* src\com\oneport\model\CVS\Root => ittMessagingPublicApp\src\main\resources\com\oneport\model\CVS\Root
+* src\com\oneport\mqtt\CVS\Entries => ittMessagingPublicApp\src\main\resources\com\oneport\mqtt\CVS\Entries
+* src\com\oneport\mqtt\CVS\Repository => ittMessagingPublicApp\src\main\resources\com\oneport\mqtt\CVS\Repository
+* src\com\oneport\mqtt\CVS\Root => ittMessagingPublicApp\src\main\resources\com\oneport\mqtt\CVS\Root
+* src\com\oneport\network\.DS_Store => ittMessagingPublicApp\src\main\resources\com\oneport\network\.DS_Store
+* src\com\oneport\network\CVS\Entries => ittMessagingPublicApp\src\main\resources\com\oneport\network\CVS\Entries
+* src\com\oneport\network\CVS\Repository => ittMessagingPublicApp\src\main\resources\com\oneport\network\CVS\Repository
+* src\com\oneport\network\CVS\Root => ittMessagingPublicApp\src\main\resources\com\oneport\network\CVS\Root
+* src\CVS\Entries => ittMessagingPublicApp\src\main\resources\CVS\Entries
+* src\CVS\Repository => ittMessagingPublicApp\src\main\resources\CVS\Repository
+* src\CVS\Root => ittMessagingPublicApp\src\main\resources\CVS\Root
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

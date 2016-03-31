@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.05"
+        android:gravity="center"
+        android:text="@string/itt_messaging"
+        android:textColor="@color/black"
+        android:textSize="@dimen/login_page_title_size"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+
+        <EditText
+            android:id="@+id/inputTid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:hint="@string/input_hint_tid"
+            android:maxLines="1"
+            android:inputType="textCapCharacters"
+            />
+
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/inputTid"
+            android:layout_alignRight="@+id/inputTid"
+            android:layout_below="@+id/inputTid"
+            android:ems="10"
+            android:hint="@string/input_hint_password"
+            android:inputType="textPassword"
+            />
+        
+        <EditText
+            android:id="@+id/inputLicenseNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/inputPassword"
+            android:layout_below="@+id/inputPassword"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:inputType="textCapCharacters"
+            android:hint="@string/input_hint_license_number"
+            android:ems="10"
+            />
+
+		<Spinner
+		    android:id="@+id/inputTractorProvider"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignLeft="@+id/inputLicenseNumber"
+		    android:layout_alignRight="@+id/inputLicenseNumber"
+		    android:layout_below="@+id/inputLicenseNumber"
+		    android:entries="@array/tractor_provider_arr" />
+
+		<Button
+		    android:id="@+id/btnLogin"
+		    style="?android:attr/buttonStyleSmall"
+		    android:layout_width="100dp"
+		    android:layout_height="wrap_content"
+		    android:layout_alignLeft="@+id/inputTractorProvider"
+		    android:layout_alignRight="@+id/inputTractorProvider"
+		    android:layout_below="@+id/inputTractorProvider"
+		    android:background="@drawable/roundedbutton"
+		    android:gravity="center"
+		    android:paddingBottom="5dp"
+		    android:paddingLeft="20dp"
+		    android:paddingRight="20dp"
+		    android:paddingTop="5dp"
+		    android:text="@string/btn_login"
+		    android:textColor="@color/white"
+		    android:textSize="@dimen/login_page_button_size" />
+
+		<TextView
+		    android:id="@+id/tv_app_version"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_above="@+id/tv_device_id"
+		    android:layout_alignParentRight="true"
+		    android:layout_marginRight="15dp"
+		    android:text="V0.0"
+		    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+		<TextView
+		    android:id="@+id/tv_device_id"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:paddingBottom="5dp"
+		    android:layout_alignRight="@+id/tv_app_version"
+		    android:text="0000000"
+		    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </RelativeLayout>
+
+</LinearLayout>

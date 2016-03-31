@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/roundedbg" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+		    <TextView
+		        android:id="@+id/fg_r003_txt_content_pt"
+            	android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+            	android:gravity="start"
+            	android:textSize="@dimen/main_page_msg_size"
+            	android:textColor="@color/black"/>		    
+		    <TextView
+		        android:id="@+id/fg_r003_txt_content_ctnr_f"
+            	android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+            	android:gravity="start"
+            	android:textSize="@dimen/main_page_msg_size"
+            	android:textColor="@color/black"/>
+		    <TextView
+		        android:id="@+id/fg_r003_txt_content_ctnr_a"
+            	android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+            	android:gravity="start"
+            	android:textSize="@dimen/main_page_msg_size"
+            	android:textColor="@color/black"/>
+		    <TextView
+		        android:id="@+id/fg_r003_txt_content_gt"
+            	android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+            	android:gravity="start"
+            	android:textSize="@dimen/main_page_msg_size"
+            	android:textColor="@color/black"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

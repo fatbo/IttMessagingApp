@@ -1,0 +1,201 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white" >
+
+            <TextView
+                android:id="@+id/lblContactUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/contactus_underline"
+                android:textColor="@color/black"
+                android:textSize="@dimen/contactus_page_title_size" />
+
+            <TextView
+                android:id="@+id/lblHotline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblContactUs"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/hotline"
+                android:textColor="@color/black"
+                android:textSize="@dimen/contactus_page_title_size"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblHotline"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/contactus_page_title_size" />
+
+            <TextView
+                android:id="@+id/lblTech"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_version"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/contactus_tech"
+                android:textColor="@color/black"
+                android:textSize="@dimen/contactus_page_title_size" />
+
+            <LinearLayout
+                android:id="@+id/lo_contact_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblTech"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/header_logo4" >
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tv_contact_it"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="4"
+                    android:text="@string/act_contact"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/contactus_page_title_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lo_contact_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lo_contact_1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/header_logo3" >
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tv_contact_cosco"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="4"
+                    android:text="@string/cosco_contact"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/contactus_page_title_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lo_contact_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lo_contact_2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/header_logo1" >
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tv_contact_hit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="4"
+                    android:text="@string/hit_contact"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/contactus_page_title_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lo_contact_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lo_contact_3"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/header_logo2" >
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tv_contact_mod"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="4"
+                    android:text="@string/mod_contact"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/contactus_page_title_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lo_contact_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lo_contact_4"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp" >
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/dpworld" >
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tv_contact_dpw"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="4"
+                    android:text="@string/dpw_contact"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/contactus_page_title_size" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

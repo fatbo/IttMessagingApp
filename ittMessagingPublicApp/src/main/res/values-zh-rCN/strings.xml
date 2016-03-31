@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ITT 信息通</string>
+    <string name="version">1.1</string>
+    <!-- <string name="hello_world">Hello world!</string> -->
+    <string name="action_settings">设定</string>
+    <string name="itt_messaging">ITT 信息通</string>
+    <string name="activiate">启动</string>
+    <string name="truck_id">车牌:</string>
+    <string name="device_id">用户号码:</string>
+    <string name="msg_datetime">日期:</string>
+    <string name="update">更新</string>
+    <string name="back">返回</string>
+    <string name="close">关闭</string>
+    <string name="back_to_list">讯息记录</string>
+    <string name="setting">设定</string>
+    <string name="language">语言</string>
+    <string name="zhtc">繁體中文</string>
+    <string name="zhsc">简体中文</string>
+    <string name="en">English</string>
+    <string name="contact_us">联络我们</string>
+    <string name="no_msg">未收到新讯息</string>
+    <string name="hotline">热线: 3669 1409</string>
+    <string name="setting_underline"><u>设定</u></string>
+    <string name="contactus_underline"><u>联络我们</u></string>
+    <string name="contactus_tech">技术支援</string>
+    <string name="no_connection">没有网络</string>
+    <string name="update_tv">新版本更新</string>
+    <string name="version_tv">版本:</string>
+    <string name="act_contact">2991 8049</string>
+    <string name="cosco_contact">2991 8049</string>
+    <string name="hit_contact">2619 7957</string>
+    <string name="mod_contact">2115 2609</string>
+    <string name="dpw_contact">2489 4744</string>
+    <string name="not_support">装置不相容</string>
+
+    <string-array name="language_arr">
+        <item>繁體中文</item>
+        <item>简体中文</item>
+        <item>English</item>
+    </string-array>
+    <string name="reconnected">重新连接到网络</string>
+    <string name="server_connection_failed">未能連接到伺服器</string>
+
+    <!-- login activity -->
+    <string name="btn_login">登入</string>
+    <string name="btn_logout">登出</string>
+    <string name="btn_cancel">取消</string>
+    <string name="input_hint_tid">运输公司代号</string>
+    <string name="input_hint_password">密码</string>
+    <string name="input_hint_license_number">车牌</string>
+    <string-array name="tractor_provider_arr">
+        <item>HIT</item>
+        <item>MTL</item>
+        <item>CHT</item>
+        <item>DPW</item>
+        <item>ACT</item>
+    </string-array>
+    <string name="login_error_invalid_password">密码不正确</string>
+    <string name="login_error_invalid_license_number">车牌号码不正确</string>
+    <string name="login_error_truck_not_deployed">[%1$s]尚未配置于ITT平台</string>
+    <string name="login_error_device_not_authorized">未有权限登入,请联络有关码头</string>
+    <string name="login_error_invalid_tid">运输公司代号不正确</string>
+    <string name="login_error_conflict_device_id">根据ITT平台设定,此装置正配置在其它车輀上</string>
+    <string name="login_error_device_other">未能成功登入</string>
+    <string name="login_force_logout">你在ITT平台的登录已被[%1$s]取代</string>
+    <string name="login_timeout">你的登录已经逾时,请重新登入</string>
+    
+    <string name="logout_confirm">你是否确定要登出?</string>
+    <string name="logout_btn_yes">是</string>
+    <string name="logout_btn_no">否</string>
+</resources>

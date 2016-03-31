@@ -1,0 +1,7 @@
+//include ':comcrashlyticssdkandroid_beta'
+//include ':iofabricsdkandroid_fabric'
+//include ':comcrashlyticssdkandroid_answers'
+//include ':comcrashlyticssdkandroid_crashlyticscore'
+//include ':comcrashlyticssdkandroid_crashlytics'
+include ':ittMessagingApp'
+include ':ittMessagingPublicApp'
