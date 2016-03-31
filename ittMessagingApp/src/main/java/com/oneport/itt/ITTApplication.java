@@ -50,8 +50,8 @@ public class ITTApplication extends Application {
 	private static final String PROPERTY_APP_VERSION = "appVersion";
 	private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
 
-	public final static String ITT_APK_LOC = "http://www.e1port.com/itt/ITT.apk";
-	//public final static String ITT_APK_LOC = "http://www.oneport.com/itt/ITT.apk";
+	//public final static String ITT_APK_LOC = "http://www.e1port.com/itt/ITT.apk";
+	public final static String ITT_APK_LOC = "http://www.oneport.com/itt/ITT.apk";
 	
 	public final static String ITT_DOMAIN = "http://itt.e1port.com/IttWeb/IttAppServlet?";
 	//public final static String ITT_DOMAIN = "http://itt.oneport.com/IttWeb/IttAppServlet?";
