@@ -12,6 +12,8 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
+import com.oneport.itt.R;
+
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -305,7 +307,8 @@ Log.d(this.getClass().getSimpleName(),"connect to server with clientId ["+client
 				options.setKeepAliveInterval(MQTTConstant.mqttKeepAliveInterval);
 				
 				try {
-					options.setWill(connectionStatusTopic,"logout".getBytes("UTF-8"),2,true);
+					String willMsg = String.format("logout(V%s)",getResources().getString(R.string.version)); 
+					options.setWill(connectionStatusTopic,willMsg.getBytes("UTF-8"),2,true);
 				} catch (Exception e) {
 					Log.e(getClass().getCanonicalName(), "Exception occurred in setWill(): " + e.getMessage());
 				}
@@ -331,7 +334,7 @@ Log.d(this.getClass().getSimpleName(),"connect to server with clientId ["+client
 					case STOP:
 					{
 						// publish disconnect status to topic
-						String message = String.format("logout@%s",defaultSdf.format(new Date()));
+						String message = String.format("logout(V%s)@%s",getResources().getString(R.string.version),defaultSdf.format(new Date()));
 						publish(connectionStatusTopic, message, MQTTConstant.mqttPublishQOS, true);
 						/*
 						 * Clean up, and terminate.
@@ -363,7 +366,7 @@ Log.d(this.getClass().getSimpleName(),"connect to server with clientId ["+client
 
 								// TODO publish MQTT "connecting" event
 								Intent mqttStatusIntent = new Intent("mqtt_status");
-								mqttStatusIntent.putExtra("status",MQTTservice.CONNECT_STATE.CONNECTING);
+								mqttStatusIntent.putExtra("status", CONNECT_STATE.CONNECTING);
 								mqttStatusIntent.putExtra("timestamp",System.currentTimeMillis());
 								getBaseContext().sendBroadcast(mqttStatusIntent);						    	
 						    	
@@ -373,7 +376,7 @@ Log.d(this.getClass().getSimpleName(),"connect to server with clientId ["+client
 								timeout = MINTIMEOUT;
 								// TODO publish MQTT "connected" event
 								Intent mqttStatusIntent2 = new Intent("mqtt_status");
-								mqttStatusIntent2.putExtra("status",MQTTservice.CONNECT_STATE.CONNECTED);
+								mqttStatusIntent2.putExtra("status", CONNECT_STATE.CONNECTED);
 								mqttStatusIntent2.putExtra("timestamp",System.currentTimeMillis());
 								getBaseContext().sendBroadcast(mqttStatusIntent2);
 							}
@@ -400,7 +403,7 @@ Log.d(this.getClass().getSimpleName(),"connect to server with clientId ["+client
 								Bundle pubData = pubMsg.getData();
 								pubData.putString(TOPIC,connectionStatusTopic);
 								//pubData.putString(MESSAGE,"login");
-								pubData.putString(MESSAGE,String.format("login@%s",defaultSdf.format(new Date())));
+								pubData.putString(MESSAGE,String.format("login(V%s)@%s",getResources().getString(R.string.version),defaultSdf.format(new Date())));
 								pubData.putBoolean(RETAINED, true);
 								msgHandler.sendMessage(pubMsg);
 						    } else {
@@ -512,7 +515,7 @@ Log.d(this.getClass().getSimpleName(),"connect to server with clientId ["+client
 				connState = CONNECT_STATE.DISCONNECTED;
 				// TODO publish MQTT "disconnected" event
 				Intent mqttStatusIntent = new Intent("mqtt_status");
-				mqttStatusIntent.putExtra("status",MQTTservice.CONNECT_STATE.DISCONNECTED);
+				mqttStatusIntent.putExtra("status", CONNECT_STATE.DISCONNECTED);
 				mqttStatusIntent.putExtra("timestamp",System.currentTimeMillis());
 				getBaseContext().sendBroadcast(mqttStatusIntent);
 				

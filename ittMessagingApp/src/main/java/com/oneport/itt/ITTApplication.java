@@ -49,7 +49,7 @@ public class ITTApplication extends Application {
 	public static final String PROPERTY_REG_ID = "registration_id";
 	private static final String PROPERTY_APP_VERSION = "appVersion";
 	private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
-
+	
 	public final static String ITT_APK_LOC = "http://www.e1port.com/itt/ITT.apk";
 	//public final static String ITT_APK_LOC = "http://www.oneport.com/itt/ITT.apk";
 	
@@ -337,7 +337,7 @@ Log.v("initJPush","registration Id = "+regid);
 		currentLanguage = lang;
 		Resources res = getApplicationContext().getResources();
 		DisplayMetrics dm = res.getDisplayMetrics();
-		android.content.res.Configuration conf = res.getConfiguration();
+		Configuration conf = res.getConfiguration();
 		conf.locale = locales[currentLanguage.ordinal()];
 		res.updateConfiguration(conf, dm);
 

@@ -6,9 +6,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request.Method;
 import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.oneport.itt.ITTApplication;
@@ -17,7 +20,7 @@ import com.oneport.model.Msg;
 public class NetworkAddress {
 	
 	static String domain = ITTApplication.ITT_DOMAIN;
-	
+	private static int TIMEOUT_MS = 20*1000; 
 	
 
 	public static void sendActivation(String uuID, String appVersion, final NetworkDelegate delegate)
@@ -61,7 +64,10 @@ public class NetworkAddress {
                     public void onErrorResponse(VolleyError error) {
                     	delegate.failToConnect(error);
                     }
-                });  
+                });
+		
+		// no retry
+		myReq.setRetryPolicy(new DefaultRetryPolicy(TIMEOUT_MS,0,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 		ITTApplication.getInstance().getRequestQueue().add(myReq);  
 	}
 
@@ -103,7 +109,10 @@ public class NetworkAddress {
                     public void onErrorResponse(VolleyError error) {
                     	delegate.failToConnect(error);
                     }
-                });  
+                });
+
+		// no retry
+		myReq.setRetryPolicy(new DefaultRetryPolicy(TIMEOUT_MS,0,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 		ITTApplication.getInstance().getRequestQueue().add(myReq);  
 	}	
 
@@ -176,13 +185,10 @@ public class NetworkAddress {
                     	delegate.failToConnect(error);
                     }
                 });
-		
-		myReq.setRetryPolicy(new DefaultRetryPolicy(
-				5000,//DefaultRetryPolicy.DEFAULT_TIMEOUT_MS, 
-		        //DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-				3,
-		        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-		ITTApplication.getInstance().getRequestQueue().add(myReq);  
+
+		// no retry
+		myReq.setRetryPolicy(new DefaultRetryPolicy(TIMEOUT_MS,0,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+		ITTApplication.getInstance().getRequestQueue().add(myReq);
 	}
 	
 	public static void retrieveMessage(String deviceID, String MessageID, final NetworkDelegate delegate)
@@ -233,8 +239,12 @@ public class NetworkAddress {
                     public void onErrorResponse(VolleyError error) {
                     	delegate.failToConnect(error);
                     }
-                });  
-		ITTApplication.getInstance().getRequestQueue().add(myReq);  
+                });
+
+		// no retry
+		myReq.setRetryPolicy(new DefaultRetryPolicy(TIMEOUT_MS,0,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+		//myReq.setRetryPolicy(new DefaultRetryPolicy(2000,2,1));
+		ITTApplication.getInstance().getRequestQueue().add(myReq);
 	}
 	
 	public static void checkVersion(final NetworkDelegate delegate)
@@ -277,9 +287,50 @@ public class NetworkAddress {
                     public void onErrorResponse(VolleyError error) {
                     	delegate.failToConnect(error);
                     }
-                });  
+                });
+
+		// no retry
+		myReq.setRetryPolicy(new DefaultRetryPolicy(TIMEOUT_MS,0,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 		ITTApplication.getInstance().getRequestQueue().add(myReq);  
 		
 		
+	}
+
+	public static void sendMessageAck(String deviceID, String MessageID, final NetworkDelegate delegate)
+	{
+		String action = "messageAck";
+		String url = domain + "Action="+action+"&DeviceID="+deviceID+"&MessageID="+MessageID;
+		
+		JsonObjectRequest myReq = new JsonObjectRequest(Method.GET,  
+				url,  null,
+				new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                    	if(response != null){
+                    		try {
+								if(response.getInt("Status") == 1){
+									
+								}else{
+									//delegate.didRetrieveMsg(null,null,new Error("status = not success"));
+								}
+							} catch (JSONException e) {
+								e.printStackTrace();
+							}
+                    	}else{
+                    		//delegate.didRetrieveMsg(null,null,new Error("response null"));
+                    	}
+                    }
+                },  
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                    	delegate.failToConnect(error);
+                    }
+                });
+
+		// no retry
+		myReq.setRetryPolicy(new DefaultRetryPolicy(TIMEOUT_MS,0,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+		ITTApplication.getInstance().getRequestQueue().add(myReq);
 	}
 }

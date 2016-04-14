@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -645,7 +646,7 @@ Log.d("InstallAPK","lengthOfFile: "+lengthOfFile);
 	@Override
 	public void failToConnect(VolleyError error) {
 Log.d(this.getClass().getSimpleName(), "failToConnect, error: "+error);
-		if (!this.isNetworkOnline()) 
+		if (!this.isNetworkOnline())
 			showToast(R.string.no_connection);
 		else {		
 			showToast(R.string.server_connection_failed);
@@ -691,7 +692,36 @@ Log.d("reload_receiver","reloadMsg");
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			Bundle bundle = intent.getExtras();
-			getMsg(bundle.getString("msgID"));
+Log.d(this.getClass().getSimpleName(),"Content included: "+bundle.getBoolean("contentIncluded", false));			
+			if (bundle.getBoolean("contentIncluded", false)) {
+				// directly retrieve new message content from the intent
+				ArrayList<Msg> msgArr = new ArrayList<Msg>();
+				Msg msg = new Msg();
+				
+				try {
+					JSONObject messageJson = new JSONObject(bundle.getString("messageJSON"));
+					msg.content = messageJson.getString("Content");
+//Log.d(this.getClass().getSimpleName(),"Content: "+(messageJson.has("Content")?messageJson.getString("Content"):null));
+					msg.time = messageJson.getString("MessageDateTime");
+					msg.msgId = messageJson.getString("MessageID");
+					msg.msgDateTime = messageJson.getString("MessageTimestamp");
+					msg.msgType = messageJson.has("MessageType")?messageJson.getString("MessageType"):null;
+//Log.d(this.getClass().getSimpleName(),"MessageType: "+(messageJson.has("MessageType")?messageJson.getString("MessageType"):null));
+					msg.contentJson = messageJson.has("ContentJSON")?messageJson.getString("ContentJSON"):null;
+//Log.d(this.getClass().getSimpleName(),"contentJSON: "+(messageJson.has("ContentJSON")?bundle.getString("ContentJSON"):null));					
+					msgArr.add(msg);
+					
+					// send new message ACK back to platform 20160413 (non-blocking, do not prompt loading screen)
+					NetworkAddress.sendMessageAck(ITTApplication.getInstance().getDeviceID(), msg.msgId, MainActivity.this);
+					
+					MainActivity.this.didRetrieveMsg(bundle.getString("TID"),msgArr,null);
+				} catch (Exception e) {
+					Log.e(this.getClass().getSimpleName(),"failed to parse new message JSON",e);
+				}
+				
+				
+			} else
+				getMsg(bundle.getString("msgID"));
 		}
 	};
 
@@ -787,7 +817,7 @@ Log.d("reload_receiver","reloadMsg");
 	}
 	
 	private void updateNetworkStatusImage(int networkStatus) {
-Log.d("networkStatusImage","networkStatus: "+networkStatus);
+Log.d("updateNetworkStatusImage","networkStatus: "+networkStatus);
 		int resId;
 		switch (networkStatus) {
 		case NETWORK_STATUS_FLIGHT_MODE:
@@ -811,7 +841,7 @@ Log.d("networkStatusImage","networkStatus: "+networkStatus);
 			break;
 			
 		default:
-			Log.e("networkStatusImage","unknown networkStatus");
+			Log.e("updateNetworkStatusImage","unknown networkStatus");
 			return;
 		};
 		
@@ -886,7 +916,7 @@ Log.d("networkStatusImage","networkStatus: "+networkStatus);
 			                     status == BatteryManager.BATTERY_STATUS_FULL;
 
 			
-Log.d("batteryChangedReceiver","level: "+level+", battery level: "+level+", is charging? "+isCharging);
+Log.d("battery_changed_receiver","level: "+level+", battery level: "+level+", is charging? "+isCharging);
 			
 			//imgBatteryLevel.setImageBitmap(loadBatteryLevelBitmap(level));
 			int batteryLvlImgResId = R.drawable.ic_battery_unknown_black_18dp;
@@ -913,7 +943,7 @@ Log.d("batteryChangedReceiver","level: "+level+", battery level: "+level+", is c
 	
 	private Bitmap loadBatteryLevelBitmap(int batteryLevel) {
 		
-		InputStream is = this.getResources().openRawResource(+R.drawable.battery_level_vertical);
+		InputStream is = this.getResources().openRawResource(R.drawable.battery_level_vertical);
 		try {
 			BitmapRegionDecoder decoder = BitmapRegionDecoder.newInstance(is, false);
 			//int height = decoder.getHeight();

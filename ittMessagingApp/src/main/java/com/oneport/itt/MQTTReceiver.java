@@ -2,6 +2,7 @@ package com.oneport.itt;
 
 import java.util.List;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -60,8 +61,19 @@ Log.d(TAG, "message: "+msg);
 					if (msgType == 0) {
 						// new msg
 						Intent msgIntent = new Intent("new_msg");
-						msgIntent.putExtra("msgID",
-								extras.getString("MessageID"));
+						msgIntent.putExtra("msgID",extras.getString("MessageID"));
+						msgIntent.putExtra("TID",extras.getString("TID"));
+						
+						if (extras.has("ContentIncluded")) {
+							// message content already included in the push message 20160413
+							msgIntent.putExtra("contentIncluded", extras.getBoolean("ContentIncluded"));							
+							JSONArray msgJsonArr = extras.getJSONArray("Messages");
+							// retrieve the first JSON object under "Messages"							
+							JSONObject message = msgJsonArr.length()>0?msgJsonArr.getJSONObject(0):null;
+							if (message!=null)
+								msgIntent.putExtra("messageJSON", message.toString());
+						}
+						
 						context.sendBroadcast(msgIntent);
 						try {
 							turnUpVolume(context);

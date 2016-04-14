@@ -45,9 +45,9 @@ public class MsgViewPagerFragment extends Fragment implements OnClickListener{
         super.onCreate(savedInstanceState);
     }
     
-    /*public MsgViewPagerFragment(int start_position){
+    public MsgViewPagerFragment(int start_position){
     	this.start_position = start_position;
-    }*/
+    }
     
     public MsgViewPagerFragment(){
     	

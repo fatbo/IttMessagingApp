@@ -16,7 +16,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
 		    <TextView
 		        android:id="@+id/fg_r007_txt_content_gt"
@@ -25,20 +25,66 @@
             	android:gravity="start"
             	android:textSize="@dimen/main_page_msg_size"
             	android:textColor="@color/black"/>
-		    <TextView
+		    <!-- <TextView
 		        android:id="@+id/fg_r007_txt_ctnr_f"
-            	android:layout_width="match_parent"
+            	android:layout_width="wrap_content"
             	android:layout_height="wrap_content"
             	android:gravity="start"
             	android:textSize="@dimen/main_page_msg_size"
-            	android:textColor="@color/black"/>
-		    <TextView
+            	android:textColor="@color/black"/> -->
+            	
+           	<RelativeLayout
+	           	android:layout_width="match_parent"
+	           	android:layout_height="wrap_content"
+	           	android:orientation="horizontal">
+			    <TextView
+			        android:id="@+id/fg_r007_txt_ctnr_f"
+	            	android:layout_width="wrap_content"
+	            	android:layout_height="wrap_content"
+	            	android:gravity="start"
+	            	android:textSize="@dimen/main_page_msg_size"
+	            	android:textColor="@color/black"
+	            	android:layout_alignParentLeft="true"
+	            	android:layout_alignParentTop="true"/>
+			    <include
+			        android:id="@+id/fg_r007_ctnr_f_type"
+			        layout="@layout/ctnr_type"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_toRightOf="@id/fg_r007_txt_ctnr_f"
+			        android:layout_centerVertical="true"
+			        android:visibility="gone"/>
+			</RelativeLayout>
+		    <!-- <TextView
 		        android:id="@+id/fg_r007_txt_ctnr_a"
-            	android:layout_width="match_parent"
+            	android:layout_width="wrap_content"
             	android:layout_height="wrap_content"
             	android:gravity="start"
             	android:textSize="@dimen/main_page_msg_size"
-            	android:textColor="@color/black"/>
+            	android:textColor="@color/black"/> -->
+            	
+           	<RelativeLayout
+	           	android:layout_width="match_parent"
+	           	android:layout_height="wrap_content"
+	           	android:orientation="horizontal">
+			    <TextView
+			        android:id="@+id/fg_r007_txt_ctnr_a"
+	            	android:layout_width="wrap_content"
+	            	android:layout_height="wrap_content"
+	            	android:gravity="start"
+	            	android:textSize="@dimen/main_page_msg_size"
+	            	android:textColor="@color/black"
+	            	android:layout_alignParentLeft="true"
+	            	android:layout_alignParentTop="true"/>
+			    <include
+			        android:id="@+id/fg_r007_ctnr_a_type"
+			        layout="@layout/ctnr_type"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_toRightOf="@id/fg_r007_txt_ctnr_a"
+			        android:layout_centerVertical="true"
+			        android:visibility="gone"/>
+			</RelativeLayout>
 		    <TextView
 		        android:id="@+id/fg_r007_txt_next_pt"
             	android:layout_width="match_parent"
@@ -46,20 +92,64 @@
             	android:gravity="start"
             	android:textSize="@dimen/main_page_msg_size"
             	android:textColor="@color/black"/>
-		    <TextView
+		    <!-- <TextView
 		        android:id="@+id/fg_r007_txt_ctnr_f2"
-            	android:layout_width="match_parent"
+            	android:layout_width="wrap_content"
             	android:layout_height="wrap_content"
             	android:gravity="start"
             	android:textSize="@dimen/main_page_msg_size"
-            	android:textColor="@color/black"/>
-		    <TextView
+            	android:textColor="@color/black"/> -->
+           	<RelativeLayout
+	           	android:layout_width="match_parent"
+	           	android:layout_height="wrap_content"
+	           	android:orientation="horizontal">
+			    <TextView
+			        android:id="@+id/fg_r007_txt_ctnr_f2"
+	            	android:layout_width="wrap_content"
+	            	android:layout_height="wrap_content"
+	            	android:gravity="start"
+	            	android:textSize="@dimen/main_page_msg_size"
+	            	android:textColor="@color/black"
+	            	android:layout_alignParentLeft="true"
+	            	android:layout_alignParentTop="true"/>
+			    <include
+			        android:id="@+id/fg_r007_ctnr_f2_type"
+			        layout="@layout/ctnr_type"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_toRightOf="@id/fg_r007_txt_ctnr_f2"
+			        android:layout_centerVertical="true"
+			        android:visibility="gone"/>
+			</RelativeLayout>
+		    <!-- <TextView
 		        android:id="@+id/fg_r007_txt_ctnr_a2"
-            	android:layout_width="match_parent"
+            	android:layout_width="wrap_content"
             	android:layout_height="wrap_content"
             	android:gravity="start"
             	android:textSize="@dimen/main_page_msg_size"
-            	android:textColor="@color/black"/>
+            	android:textColor="@color/black"/> -->
+           	<RelativeLayout
+	           	android:layout_width="match_parent"
+	           	android:layout_height="wrap_content"
+	           	android:orientation="horizontal">
+			    <TextView
+			        android:id="@+id/fg_r007_txt_ctnr_a2"
+	            	android:layout_width="wrap_content"
+	            	android:layout_height="wrap_content"
+	            	android:gravity="start"
+	            	android:textSize="@dimen/main_page_msg_size"
+	            	android:textColor="@color/black"
+	            	android:layout_alignParentLeft="true"
+	            	android:layout_alignParentTop="true"/>
+			    <include
+			        android:id="@+id/fg_r007_ctnr_a2_type"
+			        layout="@layout/ctnr_type"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_toRightOf="@id/fg_r007_txt_ctnr_a2"
+			        android:layout_centerVertical="true"
+			        android:visibility="gone"/>
+			</RelativeLayout>
 		    <TextView
 		        android:id="@+id/fg_r007_txt_next_gt"
             	android:layout_width="match_parent"

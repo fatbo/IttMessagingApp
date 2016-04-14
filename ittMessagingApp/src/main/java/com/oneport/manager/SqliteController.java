@@ -144,7 +144,6 @@ Log.d(this.getClass().getCanonicalName(), "onUpgarde, "+oldVersion+" -> "+newVer
 			
 			cv.put("msgType", msg.msgType);
 			cv.put("contentJson", msg.contentJson);
-
 			long long1 = db.insert(table_name, "", cv);
 			if (long1 == -1)
 				return false;
