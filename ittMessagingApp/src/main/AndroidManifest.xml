@@ -162,9 +162,6 @@
         <meta-data
             android:name="JPUSH_APPKEY"
             android:value="0faa201b70519a11dc9fdb31" />
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="e965d7aa795e0fef569d8953efb17c8d39e503b6" />
         
         
 		<!-- Mqtt Service -->
